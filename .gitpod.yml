@@ -1,0 +1,15 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: pnpm install && cd src-tauri && cargo build --no-default-features
+    command: 'pnpm tauri dev'
+
+ports:
+  - name: VNC UI
+    port: 6080
+    onOpen: open-browser
+
+github:
+  prebuilds:
+    addCheck: true
