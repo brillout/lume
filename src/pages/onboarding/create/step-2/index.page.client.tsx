@@ -7,16 +7,10 @@ import { fetchProfileMetadata } from '@utils/hooks/useProfileMetadata';
 import { createPleb, updateAccount } from '@utils/storage';
 import { arrayToNIP02 } from '@utils/transform';
 
-import { createClient } from '@supabase/supabase-js';
 import { CheckCircle } from 'iconoir-react';
 import { getEventHash, signEvent } from 'nostr-tools';
-import { Key, useCallback, useContext, useEffect, useState } from 'react';
+import { Key, useCallback, useContext, useState } from 'react';
 import { navigate } from 'vite-plugin-ssr/client/router';
-
-const supabase = createClient(
-  'https://niwaazauwnrwiwmnocnn.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5pd2FhemF1d25yd2l3bW5vY25uIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzYwMjAzMjAsImV4cCI6MTk5MTU5NjMyMH0.IbjrnE6rDgC6lhIAHBIMN4niM2bPjxkRLtvAy_gFgqw'
-);
 
 const initialList = [
   { pubkey: '82341f882b6eabcd2ba7f1ef90aad961cf074af15b9ef44a09f9d2a8fbfbe6a2' },
@@ -62,7 +56,7 @@ export function Page() {
 
   const [pool, relays]: any = useContext(RelayContext);
   const [loading, setLoading] = useState(false);
-  const [list, setList]: any = useState(initialList);
+  const [list]: any = useState(initialList);
   const [follows, setFollows] = useState([]);
 
   // toggle follow state
@@ -102,24 +96,6 @@ export function Page() {
     // redirect to splashscreen
     navigate('/');
   }, [pubkey, privkey, follows, pool, relays]);
-
-  useEffect(() => {
-    let ignore = false;
-
-    const fetchData = async () => {
-      const { data } = await supabase.from('random_users').select('pubkey').limit(28);
-      // update state
-      setList((list: any) => [...list, ...data]);
-    };
-
-    if (!ignore) {
-      fetchData().catch(console.error);
-    }
-
-    return () => {
-      ignore = true;
-    };
-  }, []);
 
   return (
     <OnboardingLayout>
