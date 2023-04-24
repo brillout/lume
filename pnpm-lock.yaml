@@ -52,7 +52,7 @@ specifiers:
   tauri-plugin-sql-api: github:tauri-apps/tauri-plugin-sql
   typescript: ^4.9.5
   vite: ^4.3.1
-  vite-plugin-ssr: ^0.4.115
+  vite-plugin-ssr: ^0.4.116
   vite-tsconfig-paths: ^4.2.0
   ws: ^8.13.0
 
@@ -110,7 +110,7 @@ devDependencies:
   tailwindcss: 3.3.1_postcss@8.4.23
   typescript: 4.9.5
   vite: 4.3.1_@types+node@18.15.13
-  vite-plugin-ssr: 0.4.115_vite@4.3.1
+  vite-plugin-ssr: 0.4.116_vite@4.3.1
   vite-tsconfig-paths: 4.2.0_mzhihm7zd2gyalpll4qoudvuha
   ws: 8.13.0
 
@@ -4962,9 +4962,9 @@ packages:
       { integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw== }
     dev: true
 
-  /vite-plugin-ssr/0.4.115_vite@4.3.1:
+  /vite-plugin-ssr/0.4.116_vite@4.3.1:
     resolution:
-      { integrity: sha512-SXoru+rFEwSBgYXvQXzG73nfN8x+MGhlW4pcJI2BX0p6Tei8ys0tyg1yNu1VI95Uux2rBZip6ra/43rvKSNsag== }
+      { integrity: sha512-GtXvlUtwnLdrnfuodJhcs+kV1BXyoUhECjqdoC1pSU+7dRKyU7A9V6NmkT7yPbHu1s8bWSgqC/EP91F4DSt4rA== }
     engines: { node: '>=12.19.0' }
     hasBin: true
     peerDependencies:
