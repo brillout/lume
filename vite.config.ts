@@ -10,7 +10,4 @@ export default defineConfig({
       window: {},
     },
   },
-  build: {
-    minify: false,
-  },
 });
